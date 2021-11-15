@@ -1,0 +1,37 @@
+head,body {
+    margin: 0;
+}
+/* Utility */
+.flex-r {
+    display:flex;
+}
+.flex-c {
+    display:flex;
+    flex-direction:column;
+}
+.section {
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
+/*end*/
+.wrapper {
+    height: 100vh;
+}
+.right {
+    flex:1;
+}
+input {
+    width: 50%;
+    height: 2em;
+}
+button {
+    width: 7em;
+    height: 2.5em;
+}
+.login {
+    display: none;
+}
+.signup {
+    display: none;
+}
