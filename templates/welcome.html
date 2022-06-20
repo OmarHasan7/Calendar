@@ -1,48 +1,58 @@
-{% extends "layout.html" %}
+<!DOCTYPE html>
 
-{% block body %}
-    <div class="wrapper flex-r">
-        <div class="section flex-c">
-            <p>to keep you always <span>on time</span></p>
-            <h1>On Time</h1>
-            <h1>calendar</h1>
-            <button id="login-btn" onclick="login_form()">login</button>
-            <p id="or">Or</p>
-            <button id="signup-btn" onclick="signup_form()">sign up</button>
+<html len="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+        <link rel="stylesheet" href="static/style.css">
+
+        <title>OnTime welcome</title>
+    </head>
+    <body>
+        <div class="accent"></div>
+        <div class="wrapper flex-r">
+            <div class="sec flex-c">
+                <p class="statement headline">to keep you always <span>on time</span></p>
+                <h1 class="on-time headline">On Time</h1>
+                <h1 class="calendar headline">Calendar</h1>
+                <button class="button" id="login-btn" onclick="login_form()">login</button>
+                <p id="or">Or</p>
+                <button class="button" id="signup-btn" onclick="signup_form()">sign up</button>
+            </div>
+            <div class="right flex-c">
+                <form action="/login" method="post" class="login section flex-c">
+                    <h3>log in</h3>
+                    <input class="input1" name="usrnm" placeholder="Username">
+                    <input class="input2" name="psswrd" placeholder="Password">
+                    <button class="btn btn-1" type="submit">log in</button>
+                </form>
+                <form action="/register" method="post" class="signup section flex-c">
+                    <h3>Sign up</h3>
+                    <input class="input3" name="usrnm" placeholder="Username">
+                    <input class="input-m" name="eml" placeholder="Email">
+                    <input class="input-m" name="psswrd" placeholder="Password">
+                    <input class="input-m" name="psswrd_c" placeholder="Confirm password">
+                    <button class="btn btn-signup">sign up</button>
+                </form>
+            </div>
         </div>
-        <div class="right flex-c">
-            <form action="/login" method="post" class="login section flex-c">
-                <h3>log in</h3>
-                <input class="input" name="usrnm" placeholder="Username">
-                <input class="input" name="psswrd" placeholder="Password">
-                <button class="btn-1" type="submit">log in</button>
-            </form>
-            <form action="/register" method="post" class="signup section flex-c">
-                <h3>Sign up</h3>
-                <input class="input" name="usrnm" placeholder="Username">
-                <input class="input" name="eml" placeholder="Email">
-                <input class="input" name="psswrd" placeholder="Password">
-                <input class="input" name="psswrd_c" placeholder="Confirm password">
-                <button class="btn-1">sign up</button>
-            </form>
-        </div>
-    </div>
-    <script>
-        function login_form()
-        {
-            document.querySelector('.signup').style.display = 'none';
-            document.querySelector('.login').style.display = 'flex';
-            document.querySelector('#or').style.display = 'none';
-            document.querySelector('#signup-btn').style.display = 'inline-block';
-            document.querySelector('#login-btn').style.display = 'none';
-        }
-        function signup_form()
-        {
-            document.querySelector('.login').style.display = 'none';
-            document.querySelector('.signup').style.display = 'flex';                
-            document.querySelector('#or').style.display = 'none';
-            document.querySelector('#login-btn').style.display = 'inline-block';
-            document.querySelector('#signup-btn').style.display = 'none';
-        }
-    </script>
-{% endblock %}
+        <script>
+            function login_form()
+            {
+                document.querySelector('.signup').style.display = 'none';
+                document.querySelector('.login').style.display = 'flex';
+                document.querySelector('#or').style.display = 'none';
+                document.querySelector('#signup-btn').style.display = 'inline-block';
+                document.querySelector('#login-btn').style.display = 'none';
+            }
+            function signup_form()
+            {
+                document.querySelector('.login').style.display = 'none';
+                document.querySelector('.signup').style.display = 'flex';                
+                document.querySelector('#or').style.display = 'none';
+                document.querySelector('#login-btn').style.display = 'inline-block';
+                document.querySelector('#signup-btn').style.display = 'none';
+            }
+        </script>        
+    </body>
+</html>

@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+
+<html len="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+        <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.7/dayjs.min.js" integrity="sha256-DLRq9d+sak+DFd9tNntiDhbit2Ap2DBlVfh7l9o+LNM=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.7/plugin/weekOfYear.js" integrity="sha256-+36bSyE7K3KU/VI2u0h4ti5ogpLPLAd0Xwx/8Adigz8=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.7/plugin/weekday.js" integrity="sha256-xf+sj7feuG/ykg9qTxI/kFPO0JyB9ueEvztgtjrEm5Y=" crossorigin="anonymous"></script>
+        <script src="/static/js/index.js"></script>
+        <script type="module" src="/static/js/calendar.js"></script>
+        <script type="module" src="/static/js/tasks.js"></script>
+        <script type="module" src="/static/js/summary.js"></script>
+        <link rel="stylesheet" href="static/index.css">
+
+        <title>OnTime main</title>
+    </head>
+    <body>
+        <div class="line"></div>
+        <div id="cover"></div>
+        <div class="container flex-r">
+            <nav class="">
+                <div class="wrapper flex-c">
+                    <h1 class="logo">On Time</h1>
+                    <div class="main-btns flex-c">
+                        <button class="m-active-btn" id="summ-btn">Summary</button>
+                        <button class="m-btn" id="cal-btn">Calendar</button>
+                        <button class="m-btn" id="task-btn">Tasks list</button>
+                    </div>
+                </div>
+                <br><br><br><br><br><br><br><br>
+                <form>
+                    <button type="submit" formaction="/logout" id="logout">logout</button>
+                </form>
+            </nav>
+            <div id="main" class="main">
+                <div class="cal-wrapper" style="display:none;">
+                    <div class="crrnt-date flex-r">
+                        <button id="btn-p" class="arrow">
+                            <div class="triangle-l"></div>
+                        </button>
+                        <div class="crrnt-h flex-r">
+                            <h2 id="crrnt-month">November</h2>
+                            <h2 id="crrnt-year">2021</h2>
+                        </div>
+                        <button id="btn-n" class="arrow">
+                            <div class="triangle-r"></div>
+                        </button>
+                    </div>
+                    <div class="calendar">
+                        <ul class="week flex-r">
+                            <li>Mon</li>
+                            <li>Tus</li>
+                            <li>Wen</li>
+                            <li>Thu</li>
+                            <li>Fri</li>
+                            <li>Sat</li>
+                            <li>Sun</li>
+                        </ul>
+                        <div class="days">
+                            <div class="day no-left">
+                                <p>1</p>
+                            </div>
+                            <div class="day">
+                                <p>2</p>
+                            </div>
+                            <div class="day">
+                                <p>3</p>
+                            </div>
+                            <div class="day">
+                                <p>4</p>
+                            </div>
+                            <div class="day">
+                                <p>5</p>
+                            </div>
+                            <div class="day">
+                                <p>6</p>
+                            </div>
+                            <div class="day no-right">
+                                <p>7</p>
+                            </div>
+                            <div class="day no-left">
+                                <p>8</p>
+                            </div>
+                            <div class="day">
+                                <p>9</p>
+                            </div>
+                            <div class="day">
+                                <p>10</p>
+                            </div>
+                            <div class="day">
+                                <p>11</p>
+                            </div>
+                            <div class="day">
+                                <p>12</p>
+                            </div>
+                            <div class="day">
+                                <p>13</p>
+                            </div>
+                            <div class="day no-right">
+                                <p>14</p>
+                            </div>
+                            <div class="day no-left">
+                                <p>15</p>
+                            </div>
+                            <div class="day">
+                                <p>16</p>
+                            </div>
+                            <div class="day">
+                                <p>17</p>
+                            </div>
+                            <div class="day">
+                                <p>18</p>
+                            </div>
+                            <div class="day">
+                                <p>19</p>
+                            </div>
+                            <div class="day">
+                                <p>20</p>
+                            </div>
+                            <div class="day no-right">
+                                <p>21</p>
+                            </div>
+                            <div class="day no-left">
+                                <p>22</p>
+                            </div>
+                            <div class="day">
+                                <p>23</p>
+                            </div>
+                            <div class="day">
+                                <p>24</p>
+                            </div>
+                            <div class="day">
+                                <p>25</p>
+                            </div>
+                            <div class="day">
+                                <p>26</p>
+                            </div>
+                            <div class="day">
+                                <p>27</p>
+                            </div>
+                            <div class="day no-right">
+                                <p>28</p>
+                            </div>
+                            <div class="day no-left no-bottom">
+                                <p>29</p>
+                            </div>
+                            <div class="day no-bottom">
+                                <p>30</p>
+                            </div>
+                            <div class="day no-bottom">
+                                <p>1</p>
+                            </div>
+                            <div class="day no-bottom">
+                                <p>2</p>
+                            </div>
+                            <div class="day no-bottom">
+                                <p>3</p>
+                            </div>
+                            <div class="day no-bottom">
+                                <p>4</p>
+                            </div>
+                            <div class="day no-right no-bottom">
+                                <p>5</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="tasks-list" style="display: none;">
+                    <header class="flex-r">
+                        <h1 class="title">Tasks</h1>
+                        <div class="sort-t">sort:</div>
+                        <select class="sort-list">
+                            <option value="date">date added</option>
+                            <option value="priority">priority</option>
+                        </select>
+                    </header>
+                    <div class="add-task flex-r">
+                        <div class="text ">add</div>
+                        <div class="box"></div>
+                    </div>
+                    <form class="task-form">
+                        <input placeholder="Task" autocomplete="off" name="task">
+                        priority:
+                        <select name="priority">
+                            <option value="high">high</option>
+                            <option value="med" selected>med</option>
+                            <option value="low">low</option>
+                        </select>
+                        <input class="submit-task" type="submit" value="add">
+                    </form>
+                    <div class="list">
+                    </div>
+                </div>
+                <div class="summary">
+                    <div class="upcoming border-shadow">
+                        <h3 class="u-title">Upcoming events</h3>
+                        <div class="u-events">
+                            <!--<div class="u-event">
+                                <div class="u-t"></div>
+                                <div class="u-time"></div>
+                                <div class="u-date"></div>
+                            </div>
+                            <div class="u-event">
+                                <div class="u-t"></div>
+                                <div class="u-time"></div>
+                                <div class="u-date"></div>
+                            </div>
+                            <div class="u-event">
+                                <div class="u-t"></div>
+                                <div class="u-time"></div>
+                                <div class="u-date"></div>
+                            </div>-->
+                        </div>
+                    </div>
+                    <div class="weather border-shadow flex-r">
+                    </div>
+                    <div class="quote border-shadow">
+                        <div class="q-title">Today's quote</div>
+                        <div class="quote-wrap">
+                            <p class="thequote"><!--The true secret of happiness lies in taking 
+                                a genuine interest in all the details of daily life.-->
+                            </p>
+                        </div>
+                    </div>
+                    <div class="summary-tasks border-shadow">
+                        <div class="st-title">Tasks</div>
+                        <div class="st-tasks">
+                            <div class="st-task flex-r" style="display: none;">
+                                <div class="priority high">High</div>
+                                <div class="st-task-title">Take out the trash</div>
+                                <div class="st-check"></div>    
+                            </div>
+                            <div class="st-task flex-r" style="display: none;">
+                                <div class="priority med">Med</div>
+                                <div class="st-task-title">I'm still standing yeah yeah</div>
+                                <div class="st-check"></div>    
+                            </div>
+                            <div class="st-task flex-r" style="display: none;">
+                                <div class="priority high">High</div>
+                                <div class="st-task-title">finish the summary page</div>
+                                <div class="st-check"></div>    
+                            </div>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+            <div class="events" style="display:none;">
+                <h3>Events</h3>
+                <div class="add">
+                    <div class="add-btn">
+                        <div class="plus">
+                            <div class="plus-sign"></div>
+                        </div>
+                        <p class="add-text">add new event</p>
+                    </div>
+                    <button class="option _1">
+                        <p>Your own event</p>
+                    </button>
+                    <button class="option _2">
+                        <p>Search the internet</p>
+                    </button>
+                </div>
+                <div id="day-window">
+                    <div class="line2"></div>
+                    <div class="date">
+                        <p>Friday, November 19</p>
+                    </div>
+                    <div class="card" style="/*display:none*/">
+                        <form class="update"></form>
+                    </div>
+                    <div class="day-window">
+                        <div class="card" style="display:none">
+                            <p class="event-title">work on back end of the web app</p>
+                            <p class="time"><span>9:00 am</span> To <span>12:00 pm</span></p>
+                            <button class="des-btn">description</button>
+                            <p class="description">finish the design of the sql 
+                                database then try  to plan how
+                                to tackle the flask single app 
+                            </p>
+                            <button class="button">edit</button>
+                            <button id="delete" class="button">delete</button>
+                        </div>
+                        <div class="card" style="display:none">
+                            <p class="event-title">work on back end of the web app</p>
+                            <p class="time"><span>9:00 am</span> To <span>12:00 pm</span></p>
+                            <button class="des-btn">description</button>
+                            <p class="description">finish the design of the sql 
+                                database then try  to plan how
+                                to tackle the flask single app 
+                            </p>
+                            <button class="button">edit</button>
+                            <button id="delete" class="button">delete</button>
+                        </div>                
+                        <div class="card" style="display:none">
+                            <p class="event-title">work on back end of the web app</p>
+                            <p class="time"><span>9:00 am</span> To <span>12:00 pm</span></p>
+                            <button class="des-btn">description</button>
+                            <p class="description">finish the design of the sql 
+                                database then try  to plan how
+                                to tackle the flask single app 
+                            </p>
+                            <button class="button">edit</button>
+                            <button id="delete" class="button">delete</button>
+                        </div>
+                    </div>
+                </div>
+                <form class="custom-ev">
+                    <input class="ev-title" name="title" placeholder="Add title" autocomplete="off">
+                    <br><br>
+                    <div class="type-hl">Event type :</div>
+                    <div class="type-flex flex-r">
+                        <input id="1" class="type-radio" type="radio" class="ev-type" name="type" value="work">
+                        <label for="1" class="type-label flex-r">
+                            <div id="w" class="type-color"></div>
+                            work</label>
+                        <input id="2" class="type-radio" type="radio" class="ev-type" name="type" value="family">
+                        <label for="2" class="type-label flex-r">
+                            <div id="f" class="type-color"></div>
+                            family</label>
+                        <input id="3" class="type-radio" type="radio" class="ev-type" name="type" value="personal">
+                        <label for="3" class="type-label flex-r">
+                            <div id="p" class="type-color"></div>
+                            personal</label>
+                        <input id="4" class="type-radio" type="radio" class="ev-type" name="type" value="other">
+                        <label for="4" class="type-label flex-r">
+                            <div id="o" class="type-color"></div>
+                            other</label>
+                    </div>
+                    <div id="marked-date" class="flex-r">
+                        <p id="date">Friday, November 19</p> <div id="date-btn">change date</div>
+                    </div>
+                    <input style="display: none" id="input-date" type="date" class="input-date" value="2022-03-14" name="date">
+                    <button id="add-time" type="button" class="add-time-des flex-r">
+                        <div class="plus">
+                            <div class="plus-sign"></div>
+                        </div>
+                        <p class="">add a time</p>
+                    </button>
+                    <div id="time-hl" class="type-hl">Time :</div>
+                    <input type="time" class="form-time" name="time">
+                    <br><br>
+                    <button id="add-des" type="button" class="add-time-des flex-r">
+                        <div class="plus">
+                            <div class="plus-sign"></div>
+                        </div>
+                        <p class="">add a description</p>
+                    </button>
+                    <div id="des-hl" class="type-hl">Description :</div>
+                    <textarea class="form-des" name="description"></textarea>
+                    <br>
+                    <button id="save-btn" class="save-cancel-btn save-m">save</button>
+                    <button id="cancel-btn" class="save-cancel-btn">cancel</button>
+                </form>
+                <form class="search">
+                    <p>*search for well known events, 
+                        festival and occasions</p>
+                    <input name="event" autocomplete="off">
+                    <br>
+                    <input id="search-btn" type="submit" value="Search">
+                    <button class="cancel-btn2">cancel</button>
+                    <br><br>
+                    <div class="line2"></div>
+                </form>
+                <div class ="search2">
+                    <div style="display:none" class="card">
+                        <p class="event-title">Father's day</p>
+                        <p class="time"><span>Sunday, June 19</p>
+                        <p class="">2022</p>
+                        <button class="schedule">Schedule</button>
+                    </div>
+                </div>
+            </div>
+            <div class="achieved flex-c" style="display: none;">
+                <h2>Achieved</h2>
+                <div id="w">
+                    <div id="done-btn" data-type="week" class="done gap1 flex-r">
+                        <p class="d1">done this week</p>
+                        <div id="count">11</div>
+                    </div>
+                </div>
+                <div id="m">
+                    <div id="done-btn" data-type="month" class="done gap flex-r">
+                        <p class="d1">done this month</p>
+                        <div id="count">27</div>
+                    </div>
+                </div>
+                <div id="all">
+                    <div class="done gap">
+                        <p class="d2">achievement</p>
+                    </div>
+                    <div class="achievement">
+                        <div class="jewelry flex-r ruby">
+                            <div class="lvl flex-r">
+                                <img src="/static/assets/ruby.png" alt="ruby gem" class="gem">
+                                <div id="ruby" class="gem-number">0</div>
+                            </div>
+                            <div class="lvl flex-r">
+                                <img src="/static/assets/coin.png" alt="golden coin" class="gem gold">
+                                <div id="gold" class="gem-number">0</div>
+                            </div>
+                            <div class="lvl flex-r silver">
+                                <img src="/static/assets/silver_star_icon.png" alt="silver star" class="gem">
+                                <div id="silver" class="gem-number">0</div>
+                            </div>
+                            <div class="lvl flex-r">
+                                <img src="/static/assets/diamond.png" alt="diamond gem" class="gem diamond">
+                                <div id="diamond" class="gem-number">0</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="s" class="info silvr">Silver star = 10 done tasks</div>
+                    <div id="g" class="info">Gold coins = 10 silver star</div>
+                    <div id="r" class="info">Ruby gem = 10 gold coins</div>
+                    <div id="d" class="info">Diamond = 10 ruby gems</div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
