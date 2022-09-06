@@ -127,8 +127,8 @@ function des_eventlistener(btn)
 function delet_eventlistener(btn)
 {
     btn.addEventListener('click', function() {
-        let id = btn.parentElement.getAttribute('data-id');
-        let index = btn.parentElement.getAttribute('data-grid-index'); day_window_events(index);
+        let id = btn.parentElement.parentElement.getAttribute('data-id');
+        let index = btn.parentElement.parentElement.getAttribute('data-grid-index'); day_window_events(index);
         //ajax post
         let data = {"id": id};
         fetch('/change', {
@@ -137,7 +137,7 @@ function delet_eventlistener(btn)
             body: JSON.stringify(data) })
         .then(res => res.json())
         .then(async res => {
-            if (res === 'True') {
+            if (res === 'True') {delet_eventlistener
                 snatched_events = await events_grabber();
                 let day = document.querySelectorAll('.day')[index].children;
                 for (let x of day) {
@@ -158,7 +158,8 @@ function delet_eventlistener(btn)
 function update_eventlistener(btn)
 {
     btn.addEventListener('click', function() {
-        let card = btn.parentElement;
+        let card_flex = btn.parentElement;
+        let card = card_flex.parentElement;
         let update = document.createElement('form');
         let input1 = document.createElement('input');
         let input2 = document.createElement('input');
@@ -422,15 +423,18 @@ function day_window_events(index)
         let edit = document.createElement('button');
         edit.className = 'button';
         edit.id = 'edit'
-        edit.innerHTML = 'edit';
+        edit.innerHTML = 'e';
         update_eventlistener(edit);
         let delet = document.createElement('button');
         delet.className = 'button';
         delet.id = 'delete';
-        delet.innerHTML = 'delete';
+        delet.innerHTML = 'd';
         delet_eventlistener(delet);
+        let flex_btns = document.createElement('div');
+        flex_btns.className = 'flex-r card-btns';
+        flex_btns.append(edit, delet);
         //html append
-        event.append(title, time, des_btn, des, edit, delet);
+        event.append(title, time, des_btn, des, flex_btns);
         window.append(event);
         //window.innerHTML = event.outerHTML;
         //let des_button = document.querySelector('.des_btn');

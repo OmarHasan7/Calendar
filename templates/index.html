@@ -267,9 +267,6 @@
                     <div class="date">
                         <p>Friday, November 19</p>
                     </div>
-                    <div class="card" style="/*display:none*/">
-                        <form class="update"></form>
-                    </div>
                     <div class="day-window">
                         <div class="card" style="display:none">
                             <p class="event-title">work on back end of the web app</p>
@@ -279,8 +276,10 @@
                                 database then try  to plan how
                                 to tackle the flask single app 
                             </p>
-                            <button class="button">edit</button>
-                            <button id="delete" class="button">delete</button>
+                            <div class="flex-r card-btns">
+                                <button class="button">e</button>
+                                <button id="delete" class="button">d</button>
+                            </div>
                         </div>
                         <div class="card" style="display:none">
                             <p class="event-title">work on back end of the web app</p>
@@ -308,7 +307,6 @@
                 </div>
                 <form class="custom-ev">
                     <input class="ev-title" name="title" placeholder="Add title" autocomplete="off">
-                    <br><br>
                     <div class="type-hl">Event type :</div>
                     <div class="type-flex flex-r">
                         <input id="1" class="type-radio" type="radio" class="ev-type" name="type" value="work">
@@ -340,7 +338,6 @@
                     </button>
                     <div id="time-hl" class="type-hl">Time :</div>
                     <input type="time" class="form-time" name="time">
-                    <br><br>
                     <button id="add-des" type="button" class="add-time-des flex-r">
                         <div class="plus">
                             <div class="plus-sign"></div>
@@ -349,19 +346,18 @@
                     </button>
                     <div id="des-hl" class="type-hl">Description :</div>
                     <textarea class="form-des" name="description"></textarea>
-                    <br>
                     <button id="save-btn" class="save-cancel-btn save-m">save</button>
                     <button id="cancel-btn" class="save-cancel-btn">cancel</button>
                 </form>
                 <form class="search">
                     <p>*search for well known events, 
                         festival and occasions</p>
-                    <input name="event" autocomplete="off">
-                    <br>
-                    <input id="search-btn" type="submit" value="Search">
-                    <button class="cancel-btn2">cancel</button>
-                    <br><br>
-                    <div class="line2"></div>
+                    <input id="search-input" name="event" autocomplete="off">
+                    <div class="search-btnz flex-r">
+                        <input id="search-btn" type="submit" value="Search">
+                        <button class="cancel-btn2">cancel</button>
+                    </div>
+                    <div class="line-search"></div>
                 </form>
                 <div class ="search2">
                     <div style="display:none" class="card">
