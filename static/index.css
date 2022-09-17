@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'patua_one';
+    src: url('./assets/fonts/patuaone-regular-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
 html {
     box-sizing: border-box;
 }
@@ -37,6 +44,7 @@ nav {
     font-size: 36px;
     line-height: 43.88px;
     color: #525ECD;
+    font-family: 'patua_one';
 }
 .main-btns {
     margin: 0 0 0 42px;
@@ -446,13 +454,13 @@ nav {
     background-color: #f2f2f2;
 }
 .card {
-    width:186px;
+    width:196px;
     /*height: 117px;*/
     background: #4EA3F1;
     border-radius: 12px;
     color: white;
-    font-family: "patua One";
-    font-weight: bold;
+    font-family: 'patua_one';
+    font-weight: normal;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .event-title {
@@ -482,6 +490,7 @@ nav {
     visibility: visible;
 }
 .des-btn {
+    margin-left: 23px;
     width: 48px;
     height: 18px;
     border: 0.5px solid #878787;
