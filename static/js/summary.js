@@ -24,7 +24,7 @@ async function summary()
     //display events in html
     for (let i = 0; i < counter; i++) {
         let event = document.createElement('div');
-        event.className = 'u-event flex-c';
+        event.className = `u-event flex-c ${events[i][2]}`;
         console.log(event);
         let title = document.createElement('div');
         title.className = 'u-t';
@@ -32,6 +32,7 @@ async function summary()
         event.append(title);
         let time = document.createElement('div');
         time.className = 'u-time';
+        if(events[i][7])
         time.innerHTML = `time: ${events[i][7]}`;
         event.append(time);
         let date = document.createElement('u-date');

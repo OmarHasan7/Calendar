@@ -45,6 +45,7 @@ nav {
     line-height: 43.88px;
     color: #525ECD;
     font-family: 'patua_one';
+    font-weight: 400;
 }
 .main-btns {
     margin: 0 0 0 42px;
@@ -455,7 +456,7 @@ nav {
 }
 .card {
     width:196px;
-    /*height: 117px;*/
+    height: max(117px, fit-content);
     background: #4EA3F1;
     border-radius: 12px;
     color: white;
@@ -502,6 +503,67 @@ nav {
     font-weight: 600;
     box-sizing: content-box;
     
+}
+.description {
+    display: none;
+    margin-left: 23px;
+    margin-right: 30px;
+    font-size: 12px;
+}
+/*card edit & update*/
+.update {
+ padding: 23px 31px 7px 14px;
+ height: fit-content;
+}
+.update > input {
+    border-radius: 12px;
+    border: none;
+    font-family: 'patua_one';
+    color: #4B4646;
+    font-size: 11px;
+}
+.title-u {
+    width: 158px;
+    height: 22px;
+    margin-bottom: 12px;
+    font-size: 13px;
+}
+.time-u {
+    height: 19px;
+    margin-bottom: 8px;
+}
+.des-u {
+    width: 160px;
+    height: 47px;
+    margin-bottom: 14px;
+    background: #f2f2f2;
+    border-radius: 12px;
+    border: none;
+    outline: 0;
+    font-size: 11px;
+    font-family: 'patua_one';
+    color: #4B4646;
+}
+.date-u {
+    display: block;
+    width: 120px;
+    height: 23px;
+    margin-bottom: 13.5px;
+}
+.button-u {
+    width: 50px;
+    height: 21px;
+    font-size: 11px;
+    background-color: #f2f2f2;
+    border-radius: 12px;
+    border: 0.7px solid #474747;
+}
+.save-u {
+    margin-left: 23px;
+    margin-right: 16px;
+}
+.cancel-u {
+    margin: 0px;
 }
 #marked-date {
     margin-block: 26.17px 20px;
@@ -570,14 +632,14 @@ nav {
 #des-hl {
     display: none;
 }
-textarea {
+.form-des {
     margin-bottom: 20px;
     border-color: #5462df;
     background: #f2f2f2;
     border-radius: 8.9px;
     outline: 0;
 }
-textarea:focus {
+.form-des:focus {
     border: 2px solid #5462df;    
 }
 .form-des {
@@ -863,16 +925,16 @@ textarea:focus {
     background: #4EA3F1;
 }
 .family {
-    background: #EBA900;
+    background: #525ECD;
 }
 .personal {
     background: #EBA900;
 }
 .special {
-    background: #DA3333;
+    background: #bd2f2f;
 }
 .other {
-    background: #EBA900;
+    background: #4e4e4d;
 }
 /* ******* */
 .u-t {
