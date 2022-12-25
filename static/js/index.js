@@ -53,7 +53,7 @@ window.addEventListener('DOMContentLoaded', function() {
         let cstm = document.querySelector('.custom-ev');
         cstm.style.display = 'none';
         let search_form = document.querySelector('.search').style.display = 'block';
-        document.querySelector('.search2').style.display = 'block';
+        document.querySelector('.search2').style.display = 'flex';
 
     });
     //Calendar button
@@ -129,7 +129,7 @@ window.addEventListener('DOMContentLoaded', function() {
         //element_display('#day-window', 'block');
         element_display('.line2', 'block');
         element_display('.date', 'block');
-        element_display('.day-window', 'block');
+        element_display('.day-window', 'flex');
 
         element_display('#marked-date', 'flex');
         element_display('#input-date', 'none');
@@ -138,11 +138,12 @@ window.addEventListener('DOMContentLoaded', function() {
         element_display('#time-hl', 'none');
         element_display('#add-des', 'flex');
         element_display('.form-des', 'none');
-        element_display('#des-hl', 'none')
+        element_display('#des-hl', 'none');
         let add = document.querySelector('.add');
         add.className = 'add';
         let plus = document.querySelector('.add-btn');
         plus.style.marginLeft = '25px';
+        document.querySelector('.custom-ev').reset();
     });
     //search cancel button
     let cancel_search = document.querySelector('.cancel-btn2');
@@ -156,11 +157,12 @@ window.addEventListener('DOMContentLoaded', function() {
         element_display('.add-text', 'block');
         element_display('.line2', 'block');
         element_display('.date', 'block');
-        element_display('.day-window', 'block');
+        element_display('.day-window', 'flex');
         let add = document.querySelector('.add');
         add.classList.remove('add-active');
         let plus = document.querySelector('.add-btn');
         plus.style.marginLeft = '25px';
+        document.querySelector('.custom-ev').reset();
     });
     function element_display(clss, value)
     {

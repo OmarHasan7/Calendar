@@ -168,6 +168,21 @@ function weather()
                 cards.append(card_tmp, card_wind, card_humid);
                 let weather = document.querySelector('.weather');
                 weather.append(w_main, cards);
+                //weather background
+                let w_des = current['weather'][0]['description'];
+                let key_words = ['clear', 'few clouds', 'scattered', 'broken', 'cloudy', 'rain', 'storm', 'snow'];
+                let urls = ['/static/jeremy-bezanger-Vc1SiK-VoDM-unsplash.jpg', '/static/clyde-rs-4XbZCfU2Uoo-unsplash.jpg', '/static/guillaume-galtier-3YrppYQPoCI-unsplash.jpg', '/static/johan-rydberg-VXm3zdPAIwc-unsplash.jpg', '/static/johan-rydberg-VXm3zdPAIwc-unsplash.jpg', '/static/erik-witsoe-mODxn7mOzms-unsplash.jpg', '/static/layne-lawson-2uOcrLACf_4-unsplash.jpg', '/static/images.jpg'];
+                let key = null;
+                for (let x in key_words) {
+                    if (w_des.includes(key_words[x])) {
+                        key = x;
+                    }
+                    else {
+                        continue;
+                    }
+                    break;
+                }
+                weather.style.background = `${urls[key]}`;
             }
             else {
                 let massege = create_html('div', 'l-stroke', 'weather info not available (server error)');

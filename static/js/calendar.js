@@ -216,6 +216,7 @@ function cancel_eventlistener(btn)
         for (let x of card.children) {
             x.style.display = 'block';
         }
+        card.querySelector('.card-btns').style.display = 'flex';
     });
 }
 //updating an event
@@ -445,13 +446,19 @@ function day_window_events(index)
         //edit and delete buttons
         let edit = document.createElement('button');
         edit.className = 'button';
-        edit.id = 'edit'
-        edit.innerHTML = '<svg class="edit-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m16.474 5.408l2.118 2.117m-.756-3.982L12.109 9.27a2.118 2.118 0 0 0-.58 1.082L11 13l2.648-.53c.41-.082.786-.283 1.082-.579l5.727-5.727a1.853 1.853 0 1 0-2.621-2.621Z"/><path d="M19 15v3a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h3"/></g></svg>';
-        update_eventlistener(edit);
+        edit.id = 'edit';
         let delet = document.createElement('button');
         delet.className = 'button';
         delet.id = 'delete';
-        delet.innerHTML = '<svg class="delet-svg" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 28 28"><path fill="currentColor" d="M11.5 6h5a2.5 2.5 0 0 0-5 0ZM10 6a4 4 0 0 1 8 0h6.25a.75.75 0 0 1 0 1.5h-1.31l-1.217 14.603A4.25 4.25 0 0 1 17.488 26h-6.976a4.25 4.25 0 0 1-4.235-3.897L5.06 7.5H3.75a.75.75 0 0 1 0-1.5H10Zm2.5 5.75a.75.75 0 0 0-1.5 0v8.5a.75.75 0 0 0 1.5 0v-8.5Zm3.75-.75a.75.75 0 0 0-.75.75v8.5a.75.75 0 0 0 1.5 0v-8.5a.75.75 0 0 0-.75-.75Z"/></svg>';
+        if (box[i].getAttribute('data-type') === 'personal') {
+            edit.innerHTML = '<svg class="edit-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2.5em" height="2.5em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 25 25" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);"><g fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m16.474 5.408l2.118 2.117m-.756-3.982L12.109 9.27a2.118 2.118 0 0 0-.58 1.082L11 13l2.648-.53c.41-.082.786-.283 1.082-.579l5.727-5.727a1.853 1.853 0 1 0-2.621-2.621Z"/><path d="M19 15v3a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h3"/></g></svg>'; 
+            delet.innerHTML = '<svg class="delet-svg" xmlns="http://www.w3.org/2000/svg" width="2.5em" height="2.5em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 25 25"><path fill="black" d="M11.5 6h5a2.5 2.5 0 0 0-5 0ZM10 6a4 4 0 0 1 8 0h6.25a.75.75 0 0 1 0 1.5h-1.31l-1.217 14.603A4.25 4.25 0 0 1 17.488 26h-6.976a4.25 4.25 0 0 1-4.235-3.897L5.06 7.5H3.75a.75.75 0 0 1 0-1.5H10Zm2.5 5.75a.75.75 0 0 0-1.5 0v8.5a.75.75 0 0 0 1.5 0v-8.5Zm3.75-.75a.75.75 0 0 0-.75.75v8.5a.75.75 0 0 0 1.5 0v-8.5a.75.75 0 0 0-.75-.75Z"/></svg>';
+        }
+        else {
+            edit.innerHTML = '<svg class="edit-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2.5em" height="2.5em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 25 25" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);"><g fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m16.474 5.408l2.118 2.117m-.756-3.982L12.109 9.27a2.118 2.118 0 0 0-.58 1.082L11 13l2.648-.53c.41-.082.786-.283 1.082-.579l5.727-5.727a1.853 1.853 0 1 0-2.621-2.621Z"/><path d="M19 15v3a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h3"/></g></svg>';
+            delet.innerHTML = '<svg class="delet-svg" xmlns="http://www.w3.org/2000/svg" width="2.5em" height="2.5em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 25 25"><path fill="white" d="M11.5 6h5a2.5 2.5 0 0 0-5 0ZM10 6a4 4 0 0 1 8 0h6.25a.75.75 0 0 1 0 1.5h-1.31l-1.217 14.603A4.25 4.25 0 0 1 17.488 26h-6.976a4.25 4.25 0 0 1-4.235-3.897L5.06 7.5H3.75a.75.75 0 0 1 0-1.5H10Zm2.5 5.75a.75.75 0 0 0-1.5 0v8.5a.75.75 0 0 0 1.5 0v-8.5Zm3.75-.75a.75.75 0 0 0-.75.75v8.5a.75.75 0 0 0 1.5 0v-8.5a.75.75 0 0 0-.75-.75Z"/></svg>';
+        }
+        update_eventlistener(edit);
         delet_eventlistener(delet);
         let flex_btns = document.createElement('div');
         flex_btns.className = 'flex-r card-btns';
@@ -538,7 +545,12 @@ form_btn.addEventListener('click', function(btn) {
     //element_display('#day-window', 'block');
     element_display('.line2', 'block');
     element_display('.date', 'block');
-    element_display('.day-window', 'block');
+    element_display('.day-window', 'flex');
+    let add = document.querySelector('.add');
+    add.classList.remove('add-active');
+    let plus = document.querySelector('.add-btn');
+    plus.style.marginLeft = '25px';
+    document.querySelector('.custom-ev').reset();
     //setTimeout(day_window_events(ind), 0); //there is a bug in this function
 });
 function element_display(clss, value)
@@ -576,8 +588,10 @@ function display_searched(events)
         date.className = 'time';
         date.innerHTML = `${events[x][5]}, ${months[events[x][3] - 1]} ${events[x][4]}`
         let year = document.createElement('p');
+        year.className = 'event-year';
         year.innerHTML = `${events[x][2]}`;
         let button = document.createElement('button');
+        button.className = 'schedule';
         button.innerHTML = 'schedule';
         schedule_eventlistener(button);
         card.append(title, date, year, button);

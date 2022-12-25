@@ -7,6 +7,7 @@ let add_btn = document.querySelector('.box');
 add_btn.addEventListener('click', () => {
     let form = document.querySelector('.task-form');
     form.style.display = 'block';
+    add_btn.parentElement.style.display = 'none';
 });
 
 
@@ -35,7 +36,7 @@ window.addEventListener('DOMContentLoaded', function() {
         console.log(btns[0].parentElement);
         if (btns[0].parentElement.children.length < 2) {
             let done = await done_tasks();
-            done_btns(done.in_week, 'w');
+            done_btns(done.in_week, 'w2');
         }
         else {
             btns[0].nextElementSibling.remove();
@@ -304,7 +305,7 @@ async function done_tasks()
     let post = await fetch('http://127.0.0.1:5000/task', { method: 'POST', body: data});
     let res = await post.json();
     let week_count = res.weekly.length;
-    console.log(res.all);
+    console.log(res.monthly.length);
     let month_count = res.monthly.length;
     return {
         'week_count': week_count,
@@ -407,7 +408,16 @@ btn.addEventListener('click', async function(btn) {
     //reset form
     form.reset(); //not working ?!
     form.style.display = 'none';
-
+    let add_btn = document.querySelector('.add-task');
+    add_btn.style.display = 'flex';
+});
+//add-task cancel button
+let cancel_task = document.querySelector('#t-cancel');
+cancel_task.addEventListener('click', (btn) => {
+    btn.preventDefault();
+    cancel_task.parentElement.style.display = 'none';
+    let add_btn = document.querySelector('.add-task');
+    add_btn.style.display = 'flex';
 });
     
 //create the added task html

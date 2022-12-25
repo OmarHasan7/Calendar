@@ -29,6 +29,8 @@
                     </div>
                 </div>
                 <br><br><br><br><br><br><br><br>
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g transform="rotate(180 12 12)"><path fill="currentColor" fill-rule="evenodd" d="m5 8l7 8l7-8z"/></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="m5 8l7 8l7-8z"/></svg>
                 <form>
                     <button type="submit" formaction="/logout" id="logout">logout</button>
                 </form>
@@ -177,18 +179,18 @@
                         </select>
                     </header>
                     <div class="add-task flex-r">
-                        <div class="text ">add</div>
-                        <div class="box"></div>
+                        <button class="box ">add</button>
                     </div>
                     <form class="task-form">
-                        <input placeholder="Task" autocomplete="off" name="task">
-                        priority:
-                        <select name="priority">
+                        <input class="ev-title t-title" placeholder="Task" autocomplete="off" name="task">
+                        <label class="pri-lab" for="pri">priority:</label>
+                        <select id="pri" name="priority">
                             <option value="high">high</option>
                             <option value="med" selected>med</option>
                             <option value="low">low</option>
                         </select>
-                        <input class="submit-task" type="submit" value="add">
+                        <input class="submit-task box" type="submit" value="add">
+                        <button id="t-cancel" class="box">cancel</button>
                     </form>
                     <div class="list">
                     </div>
@@ -288,7 +290,7 @@
                             <p class="description">finish the design of the sql 
                                 database then try  to plan how
                                 to tackle the flask single app 
-                            </p>
+                            </p> 
                             <button class="button">
                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m16.474 5.408l2.118 2.117m-.756-3.982L12.109 9.27a2.118 2.118 0 0 0-.58 1.082L11 13l2.648-.53c.41-.082.786-.283 1.082-.579l5.727-5.727a1.853 1.853 0 1 0-2.621-2.621Z"/><path d="M19 15v3a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h3"/></g></svg>
                             </button>
@@ -365,14 +367,14 @@
                     <div style="display:none" class="card">
                         <p class="event-title">Father's day</p>
                         <p class="time"><span>Sunday, June 19</p>
-                        <p class="">2022</p>
+                        <p class="event-year">2022</p>
                         <button class="schedule">Schedule</button>
                     </div>
                 </div>
             </div>
             <div class="achieved flex-c" style="display: none;">
                 <h2>Achieved</h2>
-                <div id="w">
+                <div id="w2">
                     <div id="done-btn" data-type="week" class="done gap1 flex-r">
                         <p class="d1">done this week</p>
                         <div id="count">11</div>
@@ -385,9 +387,7 @@
                     </div>
                 </div>
                 <div id="all">
-                    <div class="done gap">
-                        <p class="d2">achievement</p>
-                    </div>
+                    <h2 class="d2">achievement</h2>
                     <div class="achievement">
                         <div class="jewelry flex-r ruby">
                             <div class="lvl flex-r">
@@ -407,11 +407,13 @@
                                 <div id="diamond" class="gem-number">0</div>
                             </div>
                         </div>
+                        <div class="jewelry-info">
+                            <div id="s" class="info">Silver star = 10 done tasks</div>
+                            <div id="g" class="info">Gold coins = 10 silver</div>
+                            <div id="r" class="info">Ruby gem = 10 gold</div>
+                            <div id="d" class="info">Diamond = 10 ruby</div>
+                        </div>
                     </div>
-                    <div id="s" class="info silvr">Silver star = 10 done tasks</div>
-                    <div id="g" class="info">Gold coins = 10 silver star</div>
-                    <div id="r" class="info">Ruby gem = 10 gold coins</div>
-                    <div id="d" class="info">Diamond = 10 ruby gems</div>
                 </div>
             </div>
         </div>
