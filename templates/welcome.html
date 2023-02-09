@@ -9,49 +9,96 @@
         <title>OnTime welcome</title>
     </head>
     <body>
-        <div class="accent"></div>
-        <div class="wrapper flex-r">
-            <div class="sec flex-c">
-                <p class="statement headline">to keep you always <span>on time</span></p>
-                <h1 class="on-time headline">On Time</h1>
-                <h1 class="calendar headline">Calendar</h1>
-                <button class="button" id="login-btn" onclick="login_form()">login</button>
-                <p id="or">Or</p>
-                <button class="button" id="signup-btn" onclick="signup_form()">sign up</button>
-            </div>
-            <div class="right flex-c">
-                <form action="/login" method="post" class="login section flex-c">
-                    <h3>log in</h3>
-                    <input class="input1" name="usrnm" placeholder="Username">
-                    <input class="input2" name="psswrd" placeholder="Password">
-                    <button class="btn btn-1" type="submit">log in</button>
-                </form>
-                <form action="/register" method="post" class="signup section flex-c">
-                    <h3>Sign up</h3>
-                    <input class="input3" name="usrnm" placeholder="Username">
-                    <input class="input-m" name="eml" placeholder="Email">
-                    <input class="input-m" name="psswrd" placeholder="Password">
-                    <input class="input-m" name="psswrd_c" placeholder="Confirm password">
-                    <button class="btn btn-signup">sign up</button>
-                </form>
+        <div class="wrapper">
+            <div class="accent"></div>
+            <div class="container">
+                <div class="sec flex-c">
+                    <p class="statement headline">to keep you always <span>on time</span></p>
+                    <h1 class="on-time headline">On Time</h1>
+                    <h1 class="calendar headline">Calendar</h1>
+                    <button class="button" id="login-btn" onclick="login_form()">login</button>
+                    <p id="or">Or</p>
+                    <button class="button" id="signup-btn" onclick="signup_form()">sign up</button>
+                </div>
+                <div class="right">
+                    <form action="/login" method="post" class="login section flex-c">
+                        <h3>log in</h3>
+                        <input class="input1" name="usrnm" placeholder="Username">
+                        <input class="input2" name="psswrd" placeholder="Password">
+                        <button class="btn btn-1" type="submit">log in</button>
+                    </form>
+                    <form action="/register" method="post" class="signup section flex-c">
+                        <h3>Sign up</h3>
+                        <input class="input3" name="usrnm" placeholder="Username">
+                        <input class="input-m" name="eml" placeholder="Email">
+                        <input class="input-m" name="psswrd" placeholder="Password">
+                        <input class="input-m" name="psswrd_c" placeholder="Confirm password">
+                        <button class="btn btn-signup">sign up</button>
+                    </form>
+                    <div class="hero">
+                        <img id="calendarImg" src="/static/CalendarScreen.png" alt="">
+                        <svg id="svg1" width="78" height="21" viewBox="0 0 78 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <mask id="path-1-inside-1_1022_1306" fill="white">
+                            <path d="M77.0981 13.1423C53.7963 2.38471 26.9253 -1.93974 0.423585 0.80282L1.6697 8.97859C26.0512 6.45543 50.7726 10.4339 72.2102 20.3309L77.0981 13.1423Z"/>
+                            </mask>
+                            <path d="M77.0981 13.1423C53.7963 2.38471 26.9253 -1.93974 0.423585 0.80282L1.6697 8.97859C26.0512 6.45543 50.7726 10.4339 72.2102 20.3309L77.0981 13.1423Z" stroke="white" stroke-width="16" stroke-linecap="square" mask="url(#path-1-inside-1_1022_1306)"/>
+                        </svg>
+                        <img id="summaryImg" src="/static/SummaryScreen.png" alt="">
+                        <svg id="svg2" width="31" height="86" viewBox="0 0 31 86" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <mask id="path-1-inside-1_1022_1307" fill="white">
+                            <path d="M4.27979 0.278618C-0.4447462 14.7709 -1.26927 29.9388 1.86395 44.721C4.99717 59.5033 12.0124 73.543 22.4189 85.8576L30.6254 81.149C21.0515 69.8195 14.5974 56.9031 11.7148 43.3034C8.83227 29.7037 9.59082 15.7492 13.9374 2.41633L4.27979 0.278618Z"/>
+                            </mask>
+                            <path d="M4.27979 0.278618C-0.444762 14.7709 -1.26927 29.9388 1.86395 44.721C4.99717 59.5033 12.0124 73.543 22.4189 85.8576L30.6254 81.149C21.0515 69.8195 14.5974 56.9031 11.7148 43.3034C8.83227 29.7037 9.59082 15.7492 13.9374 2.41633L4.27979 0.278618Z" stroke="white" stroke-width="16" stroke-linecap="square" mask="url(#path-1-inside-1_1022_1307)"/>
+                        </svg>
+                        <img id="tasksImg" src="/static/TasksScreen.png" alt="">
+                        <svg id="svg3" width="55" height="25" viewBox="0 0 55 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <mask id="path-1-inside-1_1022_1305" fill="white">
+                            <path d="M54.0141 7.18915C38.6308 16.1235 20.9977 22.0803 2.43039 24.6149L0.795944 16.4857C17.8779 14.1538 34.1003 8.67365 48.2529 0.45401L54.0141 7.18915Z"/>
+                            </mask>
+                            <path d="M54.0141 7.18915C38.6308 16.1235 20.9977 22.0803 2.43039 24.6149L0.795944 16.4857C17.8779 14.1538 34.1003 8.67365 48.2529 0.45401L54.0141 7.18915Z" stroke="white" stroke-width="16" stroke-linecap="square" mask="url(#path-1-inside-1_1022_1305)"/>
+                        </svg>
+                        <p class="hero-t t1">schedule events</p>
+                        <p class="hero-t t2">summary view</p>
+                        <p class="hero-t t3">add tasks</p>
+                    </div>
+                </div>
             </div>
         </div>
         <script>
             function login_form()
             {
-                document.querySelector('.signup').style.display = 'none';
-                document.querySelector('.login').style.display = 'flex';
+                let signup = document.querySelector('.signup');
+                signup.style.opacity = '0';
+                signup.style.transform = 'translate(50%)';
+                document.querySelector('.hero').style.display = 'none';
                 document.querySelector('#or').style.display = 'none';
                 document.querySelector('#signup-btn').style.display = 'inline-block';
                 document.querySelector('#login-btn').style.display = 'none';
+                let login = document.querySelector('.login');
+                login.style.display = 'flex';
+                setTimeout(() => {
+                    login.style.opacity = '1';
+                    login.style.transform = 'translate(0%)';
+                    signup.style.display = 'none';
+                }, 0);
+                
             }
             function signup_form()
             {
-                document.querySelector('.login').style.display = 'none';
-                document.querySelector('.signup').style.display = 'flex';                
+                let login = document.querySelector('.login');
+                login.style.opacity = '0';
+                login.style.transform = 'translate(50%)';
+                document.querySelector('.hero').style.display = 'none';
                 document.querySelector('#or').style.display = 'none';
                 document.querySelector('#login-btn').style.display = 'inline-block';
                 document.querySelector('#signup-btn').style.display = 'none';
+                let signup = document.querySelector('.signup');
+                signup.style.display = 'flex';
+                setTimeout(() => {
+                    signup.style.opacity = '1';
+                    signup.style.transform = 'translate(0%)';
+                    login.style.display = 'none';
+                }, 0);
             }
         </script>        
     </body>

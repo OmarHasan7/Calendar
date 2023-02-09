@@ -28,11 +28,14 @@
                         <button class="m-btn" id="task-btn">Tasks list</button>
                     </div>
                 </div>
-                <br><br><br><br><br><br><br><br>
-                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g transform="rotate(180 12 12)"><path fill="currentColor" fill-rule="evenodd" d="m5 8l7 8l7-8z"/></g></svg>
-                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="m5 8l7 8l7-8z"/></svg>
+                <br><br><br><br><br><br><br><br><br><br><br>
+                <button class="profile">
+                    <p class="p-name">Hi {{ username }}</p>
+                    <svg class="p-down" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="m5 8l7 8l7-8z"/></svg>
+                    <svg class="p-up" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g transform="rotate(180 12 12)"><path fill="currentColor" fill-rule="evenodd" d="m5 8l7 8l7-8z"/></g></svg>
+                </button>
                 <form>
-                    <button type="submit" formaction="/logout" id="logout">logout</button>
+                    <button class="logout" type="submit" formaction="/logout" id="logout">logout</button>
                 </form>
             </nav>
             <div id="main" class="main">
@@ -232,7 +235,9 @@
                             <div class="st-task flex-r" style="display: none;">
                                 <div class="priority high">High</div>
                                 <div class="st-task-title">Take out the trash</div>
-                                <div class="st-check"></div>    
+                                <div class="st-check">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2zM9.29 16.29L5.7 12.7a.996.996 0 1 1 1.41-1.41L10 14.17l6.88-6.88a.996.996 0 1 1 1.41 1.41l-7.59 7.59a.996.996 0 0 1-1.41 0z"/></svg>
+                                </div>    
                             </div>
                             <div class="st-task flex-r" style="display: none;">
                                 <div class="priority med">Med</div>
@@ -387,7 +392,7 @@
                     </div>
                 </div>
                 <div id="all">
-                    <h2 class="d2">achievement</h2>
+                    <h2 class="d2">jewelry</h2>
                     <div class="achievement">
                         <div class="jewelry flex-r ruby">
                             <div class="lvl flex-r">
@@ -408,8 +413,8 @@
                             </div>
                         </div>
                         <div class="jewelry-info">
-                            <div id="s" class="info">Silver star = 10 done tasks</div>
-                            <div id="g" class="info">Gold coins = 10 silver</div>
+                            <div id="s" class="info">Silver star = 1 done task</div>
+                            <div id="g" class="info">Gold coin = 10 silver</div>
                             <div id="r" class="info">Ruby gem = 10 gold</div>
                             <div id="d" class="info">Diamond = 10 ruby</div>
                         </div>

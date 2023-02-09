@@ -1,11 +1,11 @@
-"""import csv
+import csv
 import sqlite3
 
 
 con = sqlite3.connect("calendar.db")
 db = con.cursor()
 user = db.execute("SELECT * FROM user WHERE id = 1")
-with open("holidays-2022-us.csv", "r") as File:
+with open("holidays-2023-us.csv", "r") as File:
     reader = csv.reader(File)
     next(reader)
     for row in reader:
@@ -16,5 +16,5 @@ with open("holidays-2022-us.csv", "r") as File:
     for row in reader:
         inserted = db.execute("SELECT * FROM holiday WHERE name = ?", (row[1],))
         print(inserted.fetchall()[0])
-"""
+
 # done!

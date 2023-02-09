@@ -162,25 +162,27 @@ function date_sort(tasks)
                 data
                 data.append('time', time)
                 data.append('date', `${dateNow['year']}-${months.indexOf(dateNow['month']) +1}-${dateNow['monthDate']}`);            
-                check.addEventListener('click', async function() {
+                check.addEventListener('click', async function(btn) {
+                    btn.stopPropagation();
                     let res = await fetch('http://127.0.0.1:5000/task', {
                         method: 'POST',
                         body: data,
                     });
                     let response = await res.json();
                     console.log(response);
-                    check.style.background = '#555';
+                    check.innerHTML = '<svg class="check-mark" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="1.4 1.4 21 21"><path fill="#525ECD" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2zM9.29 16.29L5.7 12.7a.996.996 0 1 1 1.41-1.41L10 14.17l6.88-6.88a.996.996 0 1 1 1.41 1.41l-7.59 7.59a.996.996 0 0 1-1.41 0z"/></svg>';
                     console.log(check.parentElement.querySelector('.task-title'));
                     let task = check.parentElement;
                     let div = task.parentElement;
                     task.querySelector('.task-title').style.textDecoration = 'line-through';
                     setTimeout(() => {
-                        task.remove();
+                        task.style.transform = 'translate(180%)';
                         //segment removal if needed
                         if (div.children.length === 1) {
                             div.children[0].remove();
                         }            
                     }, 1000);
+                    setTimeout(() => { task.remove(); }, 2000);
                     execute();
                 });
                 task.append(priority, title, check);
@@ -323,17 +325,20 @@ function done_count(week, month, all)
     c[1].innerHTML = month;
     //achivement
     let jewelry = document.querySelector('.jewelry');
+    let d = Math.floor(all / 1000);
     let diamond = jewelry.querySelector('#diamond');
-    diamond.innerHTML = `${Math.floor(all / 10000)}`;
-    let remaining = all % 10000;
+    diamond.innerHTML = `${d}`;
+    let remaining = all % 1000;
+    let r = Math.floor(remaining / 100);
     let ruby = jewelry.querySelector('#ruby');
-    ruby.innerHTML = `${Math.floor(remaining / 1000)}`;
-    remaining = remaining % 1000;
-    let gold = jewelry.querySelector('#gold');
-    gold.innerHTML = `${Math.floor(remaining / 100)}`;
+    ruby.innerHTML = `${r}`;
     remaining = remaining % 100;
+    let g = Math.floor(remaining / 10);
+    let gold = jewelry.querySelector('#gold');
+    gold.innerHTML = `${g}`;
+    remaining = remaining % 10;
     let silver = jewelry.querySelector('#silver');
-    silver.innerHTML = `${Math.floor(remaining / 10)}`;
+    silver.innerHTML = `${Math.floor(remaining)}`;
 }
 
 async function done_btns(done, id)
@@ -343,7 +348,7 @@ async function done_btns(done, id)
     let dif = dayjs().diff(date, 'day');*/
     let div = document.querySelector(`#${id}`);
     let checked = document.createElement('div');
-    checked.className = 'checked'; 
+    checked.className = 'checked';
     /*while(tasks.length !== 0)
     {
         let counter = 0;

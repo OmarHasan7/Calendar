@@ -25,7 +25,10 @@ Session(app)
 @app.route("/")
 @logged_in
 def hey():
-    return render_template("index.html")
+    con = sqlite3.connect("calendar.db")
+    db = con.cursor()
+    username = db.execute("SELECT username FROM user WHERE id = ?", (session.get("user")[0][0],)).fetchall()[0][0]
+    return render_template("index.html", username=username)
 
 @app.route("/register", methods=["POST"])
 def register():

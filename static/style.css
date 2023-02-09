@@ -1,24 +1,110 @@
+@font-face {
+    font-family: 'patua_one';
+    src: url('./assets/fonts/patuaone-regular-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    font-size: 62.5%;
+}
 head,body {
     margin: 0;
 }
 body {
     background-color: #525ECD;
+    /*font-family: 'patua_one';*/
 }
 .accent {
-    position: absolute;
+    display: inline-block;
+    position: relative;
+    margin: 0;
     width: 277px;
-    height: 100%;
+    height: 100vh;
     top: 0px;
-    left: 177px;
+    left: 17.7rem;
     background: #454fac;
     z-index: -1;
 }
 .wrapper {
-    height: 100vh;
+    /* position */
+    width: min(100%, 1440px);
+    margin: auto;
+}
+.container {
+    display: flex;
+    width: inherit;
 }
 .right {
-    flex:1;
+    display: inline-block;
     justify-content: center;
+    flex-basis: 100%;
+    /* overflow-y: hidden; */
+}
+.right > * {
+    transition: opacity 0.4s;
+    transition: transform 1s;
+}
+.hero {
+    position: relative;
+    margin-top: -50px;
+    width: min(620px, 45%);
+    font-family: 'patua_one';
+    font-size: 23px;
+    font-weight: 400;
+    color: #fff;
+}
+img {
+    width: 252px;
+    height: 172px;
+    border-radius: 15px;
+}/*
+#calendarImg {
+    position: relative;
+    margin: 0 8.5px 11.5px 0;
+}
+#summaryImg {
+    position: relative;
+    margin: 0 0 0 8.5px;
+    bottom: -105px;
+}
+#tasksImg {
+    position: relative;
+    margin: 11.5px 6px 0 0;
+    bottom: -79px;
+}
+#svg1 {
+    position: relative;
+    top: -55px;
+}
+#svg2 {
+    position: relative;
+    top: -103px;
+    right: -150px;
+}
+#svg3 {
+    position: relative;
+    top: -60px;
+}*/
+.hero-t {
+    display: inline-block;
+    margin: 0;
+}
+.t1 {
+    position: absolute;
+    top: 190px;
+    left: 5px;
+    width: 159px;
+}
+.t2 {
+    position: absolute;
+    top: 310px;
+    right: 15px;
+}
+.t3 {
+    position: absolute;
+    bottom: -120px;
+    left: 40px;
 }
 /* Utility */
 .flex-r {
@@ -30,30 +116,30 @@ body {
 }
 /*end*/
 .sec {
-    flex: 1;
-    padding-left: 196px;
+    display: inline-block;
     justify-content: center;
     box-sizing: border-box;
+    z-index: 5;
 }
 .headline {
     color: white;
 }
 .statement {
     margin: 0;
-    font-size: 33px;
+    font-size: min(3.3rem, 2vw);
 }
 .statement span {
     color: #69ffae;
 }
 .on-time {
     margin: 0;
-    font-size: 120px;
+    font-size: min(12rem, 7vw);
     line-height: 146.28px;
 }
 .calendar {
     margin: 0;
     margin-bottom: 120px;
-    font-size: 80px;
+    font-size: min(8rem, 4.8vw);
     line-height: 87.77px;
     letter-spacing: 0.2em;
 }
@@ -100,6 +186,8 @@ button {
     display: none;
     width: 430px;
     height: 566px;
+    opacity: 0;
+    transform: translate(70%);
 }
 h3 {
     font-size: 36px;
@@ -130,6 +218,8 @@ input:focus {
     display: none;
     width: 430px;
     height: 698px;
+    opacity: 0;
+    transform: translate(70%);
 }
 .signup > h3 {
     margin-bottom: 0;

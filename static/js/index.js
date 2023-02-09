@@ -98,6 +98,23 @@ window.addEventListener('DOMContentLoaded', function() {
         let main = document.querySelector('#main');
         main.style.width = '1150px';
     })
+    //profile button (logout)
+    let profile = document.querySelector('.profile');
+    profile.addEventListener('click', () => {
+        let logout_btn = document.querySelector('.logout');
+        if (logout_btn.style.display === 'none') {
+            logout_btn.style.display = 'inline-block';
+            logout_btn.style.height = 'auto';
+            document.querySelector('.p-down').style.display = 'none';
+            document.querySelector('.p-up').style.display = 'inline-block';
+        }
+        else {
+            logout_btn.style.display = 'none';
+            logout_btn.style.height = '0px';
+            document.querySelector('.p-up').style.display = 'none';
+            document.querySelector('.p-down').style.display = 'inline-block';
+        }
+    });
     // add event-form change date button
     let date_div = document.querySelector('#marked-date');
     date_div.children[1].addEventListener('click', function() {
